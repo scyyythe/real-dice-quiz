@@ -5,15 +5,15 @@ interface DiceFaceProps {
 
 const DiceFace = ({ number, size = 'md' }: DiceFaceProps) => {
   const sizeClasses = {
-    sm: 'w-12 h-12',
-    md: 'w-14 h-14',
-    lg: 'w-16 h-16',
+    sm: 'w-16 h-16',
+    md: 'w-20 h-20',
+    lg: 'w-24 h-24',
   };
 
   const dotSize = {
-    sm: 'w-2 h-2',
-    md: 'w-2.5 h-2.5',
-    lg: 'w-3 h-3',
+    sm: 'w-2.5 h-2.5',
+    md: 'w-3 h-3',
+    lg: 'w-3.5 h-3.5',
   };
 
   const renderDots = () => {
@@ -49,7 +49,7 @@ const DiceFace = ({ number, size = 'md' }: DiceFaceProps) => {
         );
       case 4:
         return (
-          <div className="grid grid-cols-2 gap-4 p-2">
+          <div className="grid grid-cols-2 gap-5 p-3">
             <div className={dotClass} />
             <div className={dotClass} />
             <div className={dotClass} />
@@ -58,8 +58,8 @@ const DiceFace = ({ number, size = 'md' }: DiceFaceProps) => {
         );
       case 5:
         return (
-          <div className="relative h-full w-full p-2">
-            <div className="grid grid-cols-2 gap-4 h-full">
+          <div className="relative h-full w-full p-3">
+            <div className="grid grid-cols-2 gap-5 h-full">
               <div className={dotClass} />
               <div className={dotClass} />
               <div className={`${dotClass} absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`} />
@@ -70,7 +70,7 @@ const DiceFace = ({ number, size = 'md' }: DiceFaceProps) => {
         );
       case 6:
         return (
-          <div className="grid grid-cols-2 gap-3 p-2">
+          <div className="grid grid-cols-2 gap-4 p-3">
             <div className={dotClass} />
             <div className={dotClass} />
             <div className={dotClass} />
