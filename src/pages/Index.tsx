@@ -131,7 +131,7 @@ const Index = () => {
                   onClick={handleReturn}
                   className="w-full py-6 text-xl font-semibold rounded-2xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] animate-fade-in"
                 >
-                  Return 🔙
+                  Return
                 </Button>
               )}
             </div>
