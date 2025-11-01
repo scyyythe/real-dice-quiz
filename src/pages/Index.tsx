@@ -91,6 +91,23 @@ const Index = () => {
                 </p>
               </div>
 
+              <div className="bg-accent/30 rounded-2xl p-8 border-2 border-accent relative">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-2xl">💡</span>
+                  <h3 className="text-lg font-semibold text-accent-foreground">Answer:</h3>
+                </div>
+                <p 
+                  className={`text-3xl font-bold text-accent-foreground transition-all duration-500 ${
+                    !showAnswer ? 'blur-xl select-none' : 'blur-0 animate-fade-in'
+                  }`}
+                >
+                  {currentQuestion.answer}
+                </p>
+                {!showAnswer && (
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/40 rounded-2xl backdrop-blur-sm"></div>
+                )}
+              </div>
+
               {!showAnswer ? (
                 <Button
                   onClick={() => setShowAnswer(true)}
@@ -99,24 +116,12 @@ const Index = () => {
                   Show Answer 💡
                 </Button>
               ) : (
-                <div className="space-y-6 animate-fade-in">
-                  <div className="bg-accent/30 rounded-2xl p-8 border-2 border-accent">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-2xl">💡</span>
-                      <h3 className="text-lg font-semibold text-accent-foreground">Answer:</h3>
-                    </div>
-                    <p className="text-3xl font-bold text-accent-foreground">
-                      {currentQuestion.answer}
-                    </p>
-                  </div>
-
-                  <Button
-                    onClick={handleReturn}
-                    className="w-full py-6 text-xl font-semibold rounded-2xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all hover:scale-[1.02]"
-                  >
-                    Return 🔙
-                  </Button>
-                </div>
+                <Button
+                  onClick={handleReturn}
+                  className="w-full py-6 text-xl font-semibold rounded-2xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] animate-fade-in"
+                >
+                  Return 🔙
+                </Button>
               )}
             </div>
           </Card>
