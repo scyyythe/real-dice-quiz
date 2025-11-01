@@ -85,7 +85,7 @@ const DiceFace = ({ number, size = 'md' }: DiceFaceProps) => {
   };
 
   return (
-    <div className={`${sizeClasses[size]} rounded-xl bg-primary/20 flex items-center justify-center border-2 border-primary/30 transition-all hover:scale-110 hover:bg-primary/30`}>
+    <div className={`${sizeClasses[size]} rounded-xl bg-primary/20 flex items-center justify-center border-2 border-primary/30 transition-all hover:scale-110 hover:bg-primary/30 active:scale-95 cursor-pointer`}>
       {renderDots()}
     </div>
   );

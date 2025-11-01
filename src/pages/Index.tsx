@@ -44,6 +44,16 @@ const Index = () => {
     setShowAnswer(false);
   };
 
+  const handleDiceClick = (num: number) => {
+    if (!currentQuestion) {
+      const question = questions.find((q) => q.number === num);
+      if (question) {
+        setCurrentQuestion(question);
+        setShowAnswer(false);
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6">
       <header className="mb-8 text-center animate-scale-in">
@@ -66,7 +76,14 @@ const Index = () => {
               </p>
               <div className="flex justify-center gap-3 mt-8 flex-wrap">
                 {[1, 2, 3, 4, 5, 6].map((num) => (
-                  <DiceFace key={num} number={num} />
+                  <button
+                    key={num}
+                    onClick={() => handleDiceClick(num)}
+                    className="focus:outline-none focus:ring-2 focus:ring-primary rounded-xl"
+                    aria-label={`Select question ${num}`}
+                  >
+                    <DiceFace number={num} />
+                  </button>
                 ))}
               </div>
             </div>
