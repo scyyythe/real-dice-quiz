@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import DiceFace from "@/components/DiceFace";
 
 interface Question {
   number: number;
@@ -65,12 +66,7 @@ const Index = () => {
               </p>
               <div className="flex justify-center gap-3 mt-8 flex-wrap">
                 {[1, 2, 3, 4, 5, 6].map((num) => (
-                  <div
-                    key={num}
-                    className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center text-2xl font-bold text-primary border-2 border-primary/30 transition-all hover:scale-110 hover:bg-primary/30"
-                  >
-                    {num}
-                  </div>
+                  <DiceFace key={num} number={num} />
                 ))}
               </div>
             </div>
@@ -79,9 +75,7 @@ const Index = () => {
           <Card className="p-10 shadow-[var(--shadow-hover)] bg-gradient-to-br from-card to-background border-2 border-primary/20 rounded-[var(--radius)] animate-scale-in">
             <div className="space-y-6">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-2xl font-bold text-primary-foreground">
-                  {currentQuestion.number}
-                </div>
+                <DiceFace number={currentQuestion.number} size="md" />
                 <h2 className="text-2xl font-semibold text-foreground">Question #{currentQuestion.number}</h2>
               </div>
 
